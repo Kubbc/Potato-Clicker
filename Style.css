@@ -2,6 +2,17 @@ body {
   background-image: url("Images/PotatoClicker_Background.png");
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+}
+
+
 
 header {
   border-radius: 5px;
