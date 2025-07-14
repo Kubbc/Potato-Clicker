@@ -1,0 +1,97 @@
+body {
+  background-image: url("Images/PotatoClicker_Background.png");
+}
+
+
+header {
+  border-radius: 5px;
+  border-bottom: 3px solid black;
+  position: fixed;
+  background-color: rgb(47, 47, 47);
+  color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 42069;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 50px;
+}
+
+header .left, header .center, header .right {
+  font-family: cursive;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  user-select: none;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(0, 157, 255);
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: rgb(60, 180, 255);
+}
+
+
+
+
+
+/*POTATO-----------------------------------------*/
+
+.Potato_btn {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 50%;
+  width: 265px;
+  height: 227px;
+  position: fixed;
+  top: 200px;
+  left: 185px;
+  outline: none;
+}
+
+.Potato_btn:focus-visible {
+  outline: none;
+}
+
+
+.Potato_img {
+  height: 200px;
+  image-rendering: pixelated;
+  -webkit-user-drag: none;
+  transition: transform 0.3s ease;
+}
+
+.Potato_img:hover {
+  transition: transform 0.1s ease-in;
+  transform: scale(1.03);
+}
+
+.Potato_img:active {
+  transform: scale(0.98);
+}
+
+
+
+/*POTATO-----------------------------------------*/
+
+.moneyDisplay {
+  font-family: cursive;
+  position: fixed;
+  top: 100px;
+  left: 316px;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 40px;
+  user-select: none;
+}
