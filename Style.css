@@ -69,15 +69,15 @@ header .left, header .center, header .right {
   cursor: pointer;
   user-select: none;
   border-radius: 50%;
-  width: 25vw;
+  width: 15vw;
   height: auto;
   max-height: 25vh;
   position: fixed;
   top: 200px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 170px;
   outline: none;
 }
+
 
 
 .Potato_btn:focus-visible {
@@ -121,7 +121,10 @@ header .left, header .center, header .right {
 
 @media (max-width: 768px) {
   .Potato_btn {
-    width: 60vw; /* Scale the button on smaller screens */
+    top: 150px; /* Adjust the button's position for smaller screens */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%);
+    width: 50vw; /* Scale the button size for smaller screens */
   }
 
   .Potato_img {
