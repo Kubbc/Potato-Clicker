@@ -1,8 +1,12 @@
 body {
   background-image: url("Images/PotatoClicker_Background.png");
-  max-width: 100%;
-  height: auto;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
 }
+
 
 img {
   max-width: 100%;
@@ -65,13 +69,16 @@ header .left, header .center, header .right {
   cursor: pointer;
   user-select: none;
   border-radius: 50%;
-  width: 265px;
-  height: 227px;
+  width: 25vw;
+  height: auto;
+  max-height: 25vh;
   position: fixed;
   top: 200px;
-  left: 185px;
+  left: 50%;
+  transform: translateX(-50%);
   outline: none;
 }
+
 
 .Potato_btn:focus-visible {
   outline: none;
@@ -80,10 +87,13 @@ header .left, header .center, header .right {
 
 .Potato_img {
   height: 200px;
+  width: auto;
+  max-width: 100%;
   image-rendering: pixelated;
   -webkit-user-drag: none;
   transition: transform 0.3s ease;
 }
+
 
 .Potato_img:hover {
   transition: transform 0.1s ease-in;
@@ -107,4 +117,18 @@ header .left, header .center, header .right {
   color: white;
   font-size: 40px;
   user-select: none;
+}
+
+@media (max-width: 768px) {
+  .Potato_btn {
+    width: 60vw; /* Scale the button on smaller screens */
+  }
+
+  .Potato_img {
+    height: 150px; /* Adjust image size for smaller screens */
+  }
+
+  .moneyDisplay {
+    font-size: 30px; /* Adjust font size on smaller screens */
+  }
 }
