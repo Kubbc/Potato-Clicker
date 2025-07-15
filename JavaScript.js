@@ -77,7 +77,7 @@ function spawnFloatingDollar(x, y) {
 
 function spawnParticle(x, y) {
   const img = document.createElement('img');
-  img.src = "images/Particle.png";
+  img.src = "Images/Particle.png";
   img.classList.add('particle');
 
 
@@ -107,7 +107,7 @@ function Hoe_Pressed() {
     hoe_price = Math.floor(hoe_price * price_increase);
 
     hoeAmountShow.textContent = hoe_amount;
-    hoe_priceShow.innerHTML = `<img src="images/Potato.png" class="smallPotato"> ${formatNumber(hoe_price)}`;
+    hoe_priceShow.innerHTML = `<img src="Images/Potato.png" class="smallPotato"> ${formatNumber(hoe_price)}`;
     purchase_audio.play();
     document.getElementById("moneyDisplay").textContent = formatNumber(Money);
   }
@@ -121,7 +121,7 @@ function Farmer_Pressed() {
     farmer_price = Math.floor(farmer_price * price_increase);
 
     farmerAmountShow.textContent = farmer_amount;
-    farmer_priceShow.innerHTML = `<img src="images/Potato.png" class="smallPotato"> ${formatNumber(farmer_price)}`;
+    farmer_priceShow.innerHTML = `<img src="Images/Potato.png" class="smallPotato"> ${formatNumber(farmer_price)}`;
     purchase_audio.play();
     document.getElementById("moneyDisplay").textContent = formatNumber(Money);
   }
