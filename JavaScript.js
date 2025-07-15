@@ -67,7 +67,7 @@ function HoeX2_Pressed() {
     hoe_multiplyer += 1;
     PPC = hoe_multiplyer
 
-    PPS = (hoe_amount * 0.1) * hoe_multiplyer;
+    PPS = (hoe_amount * 0.1) * hoe_multiplyer + (farmer_amount * 1) + (farm_amount * 20) + (fries_amount * 350);
     hoeAmountShow.textContent = hoe_amount;
     hoe_priceShow.innerHTML = `<img src="Images/Potato.png" class="smallPotato"> ${formatNumber(hoe_price)}`;
     menuClick.play();
@@ -133,7 +133,7 @@ function Hoe_Pressed() {
   if (Money >= hoe_price) {
     Money -= hoe_price;
     hoe_amount += 1;
-    PPS = (hoe_amount * 0.1) * hoe_multiplyer;
+    PPS = (hoe_amount * 0.1) * hoe_multiplyer + (farmer_amount * 1) + (farm_amount * 20) + (fries_amount * 350);
     hoe_price = Math.floor(hoe_price * price_increase);
 
     hoeAmountShow.textContent = hoe_amount;
@@ -151,7 +151,7 @@ function Farmer_Pressed() {
   if (Money >= farmer_price) {
     Money -= farmer_price;
     farmer_amount += 1;
-    PPS += 1;
+    PPS = (hoe_amount * 0.1) * hoe_multiplyer + (farmer_amount * 1) + (farm_amount * 20) + (fries_amount * 350);
     farmer_price = Math.floor(farmer_price * price_increase);
 
     farmerAmountShow.textContent = farmer_amount;
@@ -165,7 +165,7 @@ function Farm_Pressed() {
   if (Money >= farm_price) {
     Money -= farm_price;
     farm_amount += 1;
-    PPS += 20;
+    PPS = (hoe_amount * 0.1) * hoe_multiplyer + (farmer_amount * 1) + (farm_amount * 20) + (fries_amount * 350);
     farm_price = Math.floor(farm_price * price_increase);
 
     farmAmountShow.textContent = farm_amount;
@@ -179,7 +179,7 @@ function Fries_Pressed() {
   if (Money >= fries_price) {
     Money -= fries_price;
     fries_amount += 1;
-    PPS += 350;
+    PPS = (hoe_amount * 0.1) * hoe_multiplyer + (farmer_amount * 1) + (farm_amount * 20) + (fries_amount * 350);
     fries_price = Math.floor(fries_price * price_increase);
 
     friesAmountShow.textContent = fries_amount;
