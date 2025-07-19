@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="Images/Potato.png" type="image/png">
+  <title>Potato Clicker - Kubbc</title>
+
+  <link rel="stylesheet" href="Style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+  <audio id="potatoSound" src="Sounds/SFX/potato_click.wav"></audio>
+  <audio id="purchaseSound" src="Sounds/SFX/Purchase.wav"></audio>
+  <audio id="menuClick" src="Sounds/SFX/menu_click.wav"></audio>
+  <audio id="Music" loop src="Sounds/Music/Song1.mp3"></audio>
+
+  <header>
+      <div class="left">
+        <p>
+          Potato Clicker <img src="Images/Potato.png" style="height: 15px;">
+        </p>
+        <p>|</p>
+
+        <p>
+          made by -
+          <a class="link" href="https://github.com/Kubbc" target="_blank">
+            <strong>
+              Kubbc
+            </strong>
+          </a>
+        </p>
+        <p>
+          | The
+          <a href="https://scratch.mit.edu/projects/869007573/" target="_blank" class="link">
+            <strong>
+              scratch
+            </strong>
+          </a>
+          project |
+        </p>
+      </div>
+
+      <div class="center">
+        <p>
+          Want to play a better idle game? Then check out
+          <a target="_blank" class="link" href="https://orteil.dashnet.org/">
+            <strong>
+              Orteil
+            </strong>
+          </a>
+          and his game
+          <a target="_blank" class="link" href="https://orteil.dashnet.org/cookieclicker/">
+            <strong>
+              Cookie Clicker
+            </strong>
+          </a>
+        </p>
+      </div>
+
+      <div class="right">
+        <p>
+          Music: “Relaxing Piano” by
+          <strong>
+            <a class="link" href="https://pixabay.com/users/clavier-music-16027823/" target="_blank">
+              Clavier-Music
+            </a>
+          </strong>
+           — available on
+           <a class="link" href="https://pixabay.com/music/modern-classical-relaxing-piano-201831/" target="_blank">
+            <strong>
+              Pixabay
+            </strong>
+          </a>
+        </p>
+      </div>
+  </header>
+
+
+  <p class="moneyText">Potatos</p>
+  <p class="moneyDisplay" id="moneyDisplay">0</p>
+
+  <p class="PPSDisplay" id="PPSDisplay">Per second: 0</p>
+
+
+  <button class="Potato_btn" id="Potato">
+    <img class="Potato_img" src="Images/Potato.png">
+  </button>
+
+
+  <span class="float-up">$</span>
+  <span class="particle">
+    <img src="Images/Potato.png">
+  </span>
+
+
+  <img class="glow1" src="Images/Shine1.png">
+  <img class="glow2" src="Images/Shine1.png">
+
+
+  <p class="upgradeText">
+    UPGRADES
+  </p>
+
+  <div class="upgradeContainer" id="upgradeContainer">
+    <button class="upgrade" id="upgrade_hoe">
+      <img class="upgrade_img" src="Images/Upgrades/upgrade_hoe.png">
+      <p class="upgrade_text">Hoe</p>
+      <p id="upgrade_hoe_price" class="upgrade_price"><img class="smallPotato" src="Images/Potato.png"> 15</p>
+      <span id="upgrade_hoe_amount" class="upgrade_amount">0</span>
+    </button>
+
+    <button class="upgrade" id="upgrade_farmer">
+      <img class="upgrade_img" src="Images/Upgrades/upgrade_farmer.png">
+      <p class="upgrade_text">Farmer</p>
+      <p id="upgrade_farmer_price" class="upgrade_price"><img class="smallPotato" src="Images/Potato.png"> 100</p>
+      <span id="upgrade_farmer_amount" class="upgrade_amount">0</span>
+    </button>
+
+    <button class="upgrade" id="upgrade_farm">
+      <img class="upgrade_img" src="Images/Upgrades/upgrade_farm.png">
+      <p class="upgrade_text">Farm</p>
+      <p id="upgrade_farm_price" class="upgrade_price"><img class="smallPotato" src="Images/Potato.png"> 1 Thousand</p>
+      <span id="upgrade_farm_amount" class="upgrade_amount">0</span>
+    </button>
+
+    <button class="upgrade" id="upgrade_fries">
+      <img class="upgrade_img" src="Images/Upgrades/upgrade_fries.png">
+      <p class="upgrade_text">Fries</p>
+      <p id="upgrade_fries_price" class="upgrade_price"><img class="smallPotato" src="Images/Potato.png"> 12 Thousand</p>
+      <span id="upgrade_fries_amount" class="upgrade_amount">0</span>
+    </button>
+
+    <button class="upgrade" id="upgrade_factory">
+      <img class="upgrade_img" src="Images/Upgrades/upgrade_factory.png">
+      <p class="upgrade_text">Factory</p>
+      <p id="upgrade_factory_price" class="upgrade_price"><img class="smallPotato" src="Images/Potato.png"> 110 Thousand</p>
+      <span id="upgrade_factory_amount" class="upgrade_amount">0</span>
+    </button>
+  </div>
+
+
+  <div class="OneTimeUpgrade_container">
+    
+    <button class="OneTimeUpgrade" id="OneTimeUpgrade_HoeX2">
+      <img class="OneTimeUpgrade_img" src="Images/Particle.png">
+      <p class="OneTimeUpgrade_text">X2 Hoe</p>
+      <p id="OneTimeUpgrade_HoeX2_price" class="OneTimeUpgrade_price"><img class="smallPotato" src="Images/Potato.png"> 100</p>
+    </button>
+
+    <button class="OneTimeUpgrade" id="OneTimeUpgrade_ExtraHand">
+      <img class="OneTimeUpgrade_img" src="Images/OneTimeUpgrades/OneTimeUpgrade_ExtraHand.png">
+      <p class="OneTimeUpgrade_text">Extra Hand</p>
+      <p id="OneTimeUpgrade_ExtraHand_price" class="OneTimeUpgrade_price"><img class="smallPotato" src="Images/Potato.png"> 15 Thousand</p>
+    </button>
+
+    <button class="OneTimeUpgrade" id="OneTimeUpgrade_FarmerPPC">
+      <img class="OneTimeUpgrade_img" src="Images/Upgrades/upgrade_farmer.png">
+      <p class="OneTimeUpgrade_text">Farmers Boy</p>
+      <p id="OneTimeUpgrade_FarmerPPC_price" class="OneTimeUpgrade_price"><img class="smallPotato" src="Images/Potato.png"> 100 Thousand</p>
+    </button>
+
+  </div>
+
+
+
+  <button class="PatchNotesButton" id="PatchNotesButton">
+    Patch Notes
+  </button>
+
+  <div id="PatchNotesContainer" class="PatchNotesContainer">
+    <div class="PatchNotesText">
+
+      <h2>
+        1.1.1 "Quick bug fix"
+      </h2>
+      <h5>
+        15/07/2025
+      </h5>
+      <p>Update info</p>
+      <li>Fixed PPS not updating with other upgrades</li>
+
+      <h2>
+        1.1.0 "Small Update"
+      </h2>
+      <h5>
+        15/07/2025
+      </h5>
+      <p>Update info -</p>
+      <li>Added a one time upgrade system (Only one upgrade is avaible now and you get it after getting 10 Hoes)</li>
+      <li>Added 2 new upgrades</li>
+      <li>Fixed some ui issues</li>
+      <li>Fixed images not loading</li>
+      <li>Made it so you get PPS every 1/10 a second instead of every second to make it smoother</li>
+
+      <h2>
+        1.0.0 "Release of Potato Clicker"
+      </h2>
+      <h5>
+        14/07/2025 - This is my new website where i will continue the development of Potato Clicker
+        <p>Update info -</p>
+        <li>Release (:</li>
+      </h5>
+ 
+    </div>
+  </div>
+
+  <button class="settingsButton" id="settingsButton">
+    Settings
+  </button>
+
+  <div id="settingsContainer" class="settingsContainer">
+    <button id="musicSwitch" class="musicSwitch">On</button>
+    <p class="musicText">Music</p>
+
+    <button id="SFXSwitch" class="SFXSwitch">On</button>
+    <p class="SFXText">SFX</p>
+  </div>
+
+  <script src="JavaScript.js"></script>
+</body>
+
+
+</html>

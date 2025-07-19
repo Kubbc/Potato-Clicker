@@ -1,0 +1,558 @@
+body, html {
+  background-image: url("Images/PotatoClicker_Background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+
+
+header {
+  border-radius: 5px;
+  border-bottom: 3px solid black;
+  position: fixed;
+  background-color: rgb(47, 47, 47);
+  color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 42069;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 50px;
+}
+
+header .left, header .center, header .right {
+  font-family: cursive;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  user-select: none;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(0, 157, 255);
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: rgb(60, 180, 255);
+}
+
+
+
+
+
+/*POTATO-----------------------------------------*/
+
+.Potato_btn {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 50%;
+  position: fixed;
+  top: 15vw;
+  left: 10vw;
+  outline: none;
+  width: 13vw;
+  height: auto;
+  max-width: 300px;
+  min-width: 100px;
+  z-index: 5;
+}
+
+.Potato_btn:focus-visible {
+  outline: none;
+}
+
+
+.Potato_img {
+  image-rendering: pixelated;
+  -webkit-user-drag: none;
+  transition: transform 0.3s ease;
+  width: 13vw;
+  height: auto;
+  max-width: 300px;
+  min-width: 100px;
+  z-index: 4;
+}
+
+
+.Potato_img:hover {
+  transition: transform 0.1s ease-in;
+  transform: scale(1.03);
+}
+
+.Potato_img:active {
+  transform: scale(0.98);
+}
+
+
+
+/*POTATO-----------------------------------------*/
+
+.moneyDisplay {
+  font-family: cursive;
+  position: fixed;
+  top: 5vw;
+  left: 16.3vw;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 40px;
+  user-select: none;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.PPSDisplay {
+  font-family: cursive;
+  position: fixed;
+  top: 9.5vw;
+  left: 16.3vw;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 20px;
+  user-select: none;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.upgradeText {
+  position: fixed;
+  top: 20%;
+  right: 5%;
+  font-family: cursive;
+  color: white;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 1fr 100px;
+  height: 100vh;
+}
+
+.float-up {
+  font-family: cursive;
+  position: absolute;
+  pointer-events: none;
+  font-size: 1.8rem;
+  color: white;
+  animation: floatUpFade 2.6s ease-out forwards;
+  z-index: 10;
+}
+
+
+@keyframes floatUpFade {
+  from {
+    transform: translateY(0);
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-130px);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 25px;
+  animation: ParticleFade 1s ease-out forwards;
+  animation-timing-function: ease-out;
+  pointer-events: none;
+  image-rendering: pixelated;
+  z-index: 10;
+}
+
+@keyframes ParticleFade {
+  from {
+    transform: translateY(0) translateX(-50%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20px) translateX(var(--randomX));
+  }
+  to {
+    transform: translateY(50px) translateX(var(--randomX));
+    opacity: 0;
+  }
+}
+
+
+.glow1 {
+  image-rendering: crisp-edges;
+  width: 20vw;
+  animation: spin1 16s linear infinite;
+  position: fixed;
+  top: 11vw;
+  left: 6.5vw;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes spin1 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.glow2 {
+  image-rendering: crisp-edges;
+  width: 20vw;
+  animation: spin2 16s linear infinite;
+  position: fixed;
+  top: 11vw;
+  left: 6.5vw;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes spin2 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+
+/*Upgrades----------------------------------------------------------------------------------*/
+
+
+.upgradeContainer {
+  background-color: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 15.6%;
+  flex-direction: column;
+}
+
+.upgrade {
+  background-color: #888;
+  box-shadow:
+    inset 0 0 5px #000,
+    inset 2px 2px 10px rgba(255,255,255,0.2),
+    0 2px 5px rgba(0,0,0,0.5);
+  position: relative;
+  width: 100%;
+  height: 80px;
+  top: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  border-width: 5px;
+  border-right-width: 2px;
+  border-color: rgb(66, 66, 66);
+  border-style: solid;
+  font-family: cursive;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+.upgrade_text {
+  color: white;
+  pointer-events: none;
+  font-size: 25px;
+  text-align: left;
+  flex-grow: 1;
+  padding-bottom: 30px;
+}
+
+.upgrade_img {
+  image-rendering: pixelated;
+  height: 60px;
+  pointer-events: none;
+}
+
+.upgrade_price {
+  position: fixed;
+  color: white;
+  font-weight: bold;
+  padding-top: 25px;
+  font-size: 15px;
+  padding-left: 63px;
+  
+  margin-left: auto;
+  text-align: right;
+}
+
+.upgrade_amount {
+  font-weight: bold;
+  color: rgb(73, 73, 73);
+  font-size: 25px;
+  text-align: right;
+}
+
+.upgrade:hover {
+  background-color: #7d7d7d;
+  box-shadow:
+    inset 0 0 5px #000,
+    inset 2px 2px 10px rgba(186, 186, 186, 0.2),
+    0 2px 5px rgba(0,0,0,0.5);
+}
+
+.upgrade:active {
+  border-color: rgb(51, 51, 51);
+  background-color: #8c8c8c;
+  box-shadow:
+    inset 0 0 5px #000,
+    inset 2px 2px 10px rgba(167, 167, 167, 0.2),
+    0 2px 5px rgba(0,0,0,0.5);
+}
+
+.smallPotato {
+  height: 12px;
+}
+
+
+
+
+
+.OneTimeUpgrade_container {
+  background-color: none;
+  position: fixed;
+  right: 16.32%;
+  top: 0;
+  bottom: 0;
+  width: 16.99%;
+  flex-direction: column;
+}
+
+.OneTimeUpgrade_text {
+  position: fixed;
+  color: white;
+  pointer-events: none;
+  font-family: cursive;
+  font-size: 15px;
+  text-align: left;
+  flex-grow: 1;
+  padding-bottom: 20px;
+  padding-left: 25px;
+}
+
+.OneTimeUpgrade {
+  background-color: #888;
+  box-shadow:
+    inset 0 0 5px #000,
+    inset 2px 2px 10px rgba(255,255,255,0.2),
+    0 2px 5px rgba(0,0,0,0.5);
+  position: relative;
+  width: 70%;
+  height: 50px;
+  top: 10%;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  border-width: 5px;
+  border-right-width: 2px;
+  border-color: rgb(66, 66, 66);
+  border-style: solid;
+  font-family: cursive;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+.OneTimeUpgrade_img {
+  image-rendering: pixelated;
+  height: 25px;
+  pointer-events: none;
+}
+
+.OneTimeUpgrade_price {
+  position: fixed;
+  color: white;
+  font-weight: bold;
+  padding-top: 17px;
+  font-size: 12px;
+  padding-left: 25px;
+  
+  margin-left: auto;
+  text-align: right;
+}
+
+.OneTimeUpgrade:hover {
+  background-color: #7d7d7d;
+  box-shadow:
+    inset 0 0 5px #000,
+    inset 2px 2px 10px rgba(186, 186, 186, 0.2),
+    0 2px 5px rgba(0,0,0,0.5);
+}
+
+.OneTimeUpgrade:active {
+  border-color: rgb(51, 51, 51);
+  background-color: #8c8c8c;
+  box-shadow:
+    inset 0 0 5px #000,
+    inset 2px 2px 10px rgba(167, 167, 167, 0.2),
+    0 2px 5px rgba(0,0,0,0.5);
+}
+
+
+
+.PatchNotesButton {
+  position: fixed;
+  left: 33.72%;
+  top: 15%;
+  z-index: 10;
+  width: 150px;
+  background-color: rgb(164, 164, 164);
+  color: black;
+  font-family: cursive;
+  font-weight: bold;
+  border-style: solid;
+  border-left-width: 0px;
+  border-top-width: 3px;
+  border-bottom-width: 3px;
+  border-right-width: 3px; 
+  border-color: rgb(255, 255, 255);
+  user-select: none;
+}
+
+.PatchNotesContainer {
+  background-color: rgb(59, 59, 59);
+  box-shadow:
+    inset 0 0 5px #000,
+    inset 2px 2px 10px rgba(167, 167, 167, 0.2),
+    0 2px 5px rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 32.25%;
+  left: 33.72%;
+  z-index: 1;
+  display: none;
+}
+
+.PatchNotesText {
+  position: fixed;
+  top: 20%;
+  bottom: 5%;
+  left: 33.72%;
+  right: 34.03%;
+  overflow-y: auto;
+  padding: 10px;
+  font-family: cursive;
+  color: white;
+  z-index: 2;
+  user-select:text;
+}
+
+.PatchNotesButton:hover {
+  background-color: rgb(186, 186, 186);
+  border-color: rgb(255, 255, 255);
+}
+
+
+.settingsButton {
+  position: fixed;
+  left: 33.72%;
+  top: 10%;
+  z-index: 10;
+  width: 80px;
+  background-color: rgb(164, 164, 164);
+  color: black;
+  font-family: cursive;
+  font-weight: bold;
+  border-style: solid;
+  border-left-width: 0px;
+  border-top-width: 3px;
+  border-bottom-width: 3px;
+  border-right-width: 3px; 
+  border-color: rgb(255, 255, 255);
+  user-select: none;
+}
+
+.settingsButton:hover {
+  background-color: rgb(186, 186, 186);
+  border-color: rgb(255, 255, 255);
+}
+
+.settingsContainer {
+  background-color: rgb(59, 59, 59);
+  box-shadow:
+    inset 0 0 5px #000,
+    inset 2px 2px 10px rgba(167, 167, 167, 0.2),
+    0 2px 5px rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 32.25%;
+  left: 33.72%;
+  z-index: 1;
+  display: none;
+}
+
+.musicSwitch {
+  position: fixed;
+  top: 20%;
+  left: 35%;
+  width: 35px;
+  height: 35px;
+  font-family: cursive;
+  font-weight: bold;
+  border: solid rgb(255, 255, 255) 2px;
+  background-color: #b6b6b6;
+  user-select: none;
+}
+
+.musicSwitch:hover {
+  background-color: #cfcfcf;
+}
+
+.musicText {
+  position: fixed;
+  top: 19%;
+  left: 38%;
+  width: 35px;
+  height: 35px;
+  font-family: cursive;
+  color: white;
+  pointer-events: none;
+  user-select: none;
+}
+
+.SFXSwitch {
+  position: fixed;
+  top: 28%;
+  left: 35%;
+  width: 35px;
+  height: 35px;
+  font-family: cursive;
+  font-weight: bold;
+  border: solid rgb(255, 255, 255) 2px;
+  background-color: #b6b6b6;
+  user-select: none;
+}
+
+.SFXSwitch:hover {
+  background-color: #cfcfcf;
+}
+
+.SFXText {
+  position: fixed;
+  top: 27%;
+  left: 38%;
+  width: 35px;
+  height: 35px;
+  font-family: cursive;
+  color: white;
+  pointer-events: none;
+  user-select: none;
+}
