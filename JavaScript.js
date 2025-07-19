@@ -43,15 +43,15 @@ let hoe_pps = 0.1;
 let farmer_price = 100;
 let farmer_amount = 0;
 let farmer_pps = 1;
-let farm_price = 1000;
+let farm_price = 1400;
 let farm_amount = 0;
-let farm_pps = 20;
-let fries_price = 12000;
+let farm_pps = 15;
+let fries_price = 14000;
 let fries_amount = 0;
-let fries_pps = 250;
-let factory_price = 110000;
+let fries_pps = 225;
+let factory_price = 140000;
 let factory_amount = 0;
-let factory_pps = 2100;
+let factory_pps = 2000;
 
 let hoeX2_purchased = false;
 let hoe_multiplyer = 1;
@@ -108,8 +108,8 @@ function ExtraHand_Pressed() {
   }
 }
 function FarmerPPC_Pressed() {
-  if (Money >= 100000) {
-    Money -= 100000;
+  if (Money >= 50000) {
+    Money -= 50000;
     FarmerPPC.style.display = "none";
     farmerPPC_purchased = true;
     menuClick.play();
