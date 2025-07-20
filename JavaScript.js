@@ -9,6 +9,7 @@ let farmer = document.getElementById("upgrade_farmer");
 let farm = document.getElementById("upgrade_farm");
 let fries = document.getElementById("upgrade_fries");
 let factory = document.getElementById("upgrade_factory");
+let bank = document.getElementById("upgrade_bank");
 
 let hoeAmountShow = document.getElementById("upgrade_hoe_amount");
 let hoe_priceShow = document.getElementById("upgrade_hoe_price");
@@ -20,12 +21,20 @@ let friesAmountShow = document.getElementById("upgrade_fries_amount");
 let fries_priceShow = document.getElementById("upgrade_fries_price");
 let factoryAmountShow = document.getElementById("upgrade_factory_amount");
 let factory_priceShow = document.getElementById("upgrade_factory_price");
+let bankAmountShow = document.getElementById("upgrade_bank_amount");
+let bank_priceShow = document.getElementById("upgrade_bank_price");
 
-let HoeX2 = document.getElementById("OneTimeUpgrade_HoeX2");
 let ExtraHand = document.getElementById("OneTimeUpgrade_ExtraHand")
 let FarmerPPC = document.getElementById("OneTimeUpgrade_FarmerPPC")
 
-const price_increase = 1.18;
+let HoeX2 = document.getElementById("OneTimeUpgrade_HoeX2");
+let farmerX2 = document.getElementById("OneTimeUpgrade_farmerX2");
+let farmX2 = document.getElementById("OneTimeUpgrade_farmX2");
+let friesX2 = document.getElementById("OneTimeUpgrade_friesX2");
+let factoryX2 = document.getElementById("OneTimeUpgrade_factoryX2");
+let bankX2 = document.getElementById("OneTimeUpgrade_bankX2");
+
+const price_increase = 1.15;
 
 let patchNotesOnOff = false;
 let settingsOnOff = false;
@@ -37,27 +46,52 @@ let Money = 0;
 let PPC = 1;
 let PPS = 0;
 
+
+
 let hoe_price = 15;
 let hoe_amount = 0;
 let hoe_pps = 0.1;
+
 let farmer_price = 100;
 let farmer_amount = 0;
 let farmer_pps = 1;
+
 let farm_price = 1400;
 let farm_amount = 0;
-let farm_pps = 15;
-let fries_price = 14000;
-let fries_amount = 0;
-let fries_pps = 225;
-let factory_price = 140000;
-let factory_amount = 0;
-let factory_pps = 2000;
+let farm_pps = 10;
 
-let hoeX2_purchased = false;
-let hoe_multiplyer = 1;
+let fries_price = 13000;
+let fries_amount = 0;
+let fries_pps = 60;
+
+let factory_price = 150000;
+let factory_amount = 0;
+let factory_pps = 300;
+
+let bank_pps = 1250;
+let bank_price = 1200000;
+let bank_amount = 0;
+
+
+
 let ExtraHand_purchased = false;
 let farmerPPC_purchased = false;
 let farmerPPC_multiplyer = 1;
+
+let hoeX2_purchased = false;
+let hoe_multiplyer = 1;
+let farmerX2_purchased = false;
+let farmer_multiplyer = 1;
+let farmX2_purchased = false;
+let farm_multiplyer = 1;
+let friesX2_purchased = false;
+let fries_multiplyer = 1;
+let factoryX2_purchased = false;
+let factory_multiplyer = 1;
+let bankX2_purchased = false;
+let bank_multiplyer = 1;
+
+
 
 let click_multiplyer = 1;
 
@@ -77,10 +111,17 @@ farmer.onclick = Farmer_Pressed;
 farm.onclick = Farm_Pressed;
 fries.onclick = Fries_Pressed;
 factory.onclick = Factory_Pressed;
+bank.onclick = Bank_Pressed;
 
-HoeX2.onclick = HoeX2_Pressed;
 ExtraHand.onclick = ExtraHand_Pressed;
 FarmerPPC.onclick = FarmerPPC_Pressed;
+
+HoeX2.onclick = HoeX2_Pressed;
+farmerX2.onclick = FarmerX2_Pressed;
+farmX2.onclick = FarmX2_Pressed;
+friesX2.onclick = FriesX2_Pressed;
+factoryX2.onclick = FactoryX2_Pressed;
+bankX2.onclick = BankX2_Pressed;
 
 function HoeX2_Pressed() {
   if (Money >= 100) {
@@ -93,6 +134,76 @@ function HoeX2_Pressed() {
 
     hoeAmountShow.textContent = hoe_amount;
     hoe_priceShow.innerHTML = `<img src="Images/Potato.png" class="smallPotato"> ${formatNumber(hoe_price)}`;
+    menuClick.play();
+  }
+}
+
+function FarmerX2_Pressed() {
+  if (Money >= 1000) {
+    Money -= 1000
+    farmerX2.style.display = "none";
+    farmer_multiplyer += 1;
+    farmerX2_purchased = true;
+    PPC = click_multiplyer;
+
+    farmerAmountShow.textContent = farmer_amount;
+    farmer_priceShow.innerHTML = `<img src="Images/Potato.png" class="smallPotato"> ${formatNumber(farmer_price)}`;
+    menuClick.play();
+  }
+}
+
+function FarmX2_Pressed() {
+  if (Money >= 1500) {
+    Money -= 1500
+    farmX2.style.display = "none";
+    farm_multiplyer += 1;
+    farmX2_purchased = true;
+    PPC = click_multiplyer;
+
+    farmAmountShow.textContent = farm_amount;
+    farm_priceShow.innerHTML = `<img src="Images/Potato.png" class="smallPotato"> ${formatNumber(farm_price)}`;
+    menuClick.play();
+  }
+}
+
+function FriesX2_Pressed() {
+  if (Money >= 110000) {
+    Money -= 110000
+    friesX2.style.display = "none";
+    fries_multiplyer += 1;
+    friesX2_purchased = true;
+    PPC = click_multiplyer;
+
+    friesAmountShow.textContent = fries_amount;
+    fries_priceShow.innerHTML = `<img src="Images/Potato.png" class="smallPotato"> ${formatNumber(fries_price)}`;
+    menuClick.play();
+  }
+}
+
+function FactoryX2_Pressed() {
+  if (Money >= 1000000) {
+    Money -= 1000000
+    factoryX2.style.display = "none";
+    factory_multiplyer += 1;
+    factoryX2_purchased = true;
+    PPC = click_multiplyer;
+
+    factoryAmountShow.textContent = factory_amount;
+    factory_priceShow.innerHTML = `<img src="Images/Potato.png" class="smallPotato"> ${formatNumber(factory_price)}`;
+    menuClick.play();
+  }
+}
+
+function BankX2_Pressed() {
+  if (Money >= 5000000) {
+    Money -= 5000000
+    bankX2.style.display = "none";
+    bank_multiplyer += 1;
+    bankX2_purchased = true;
+    PPC = click_multiplyer;
+
+    bankAmountShow.textContent = bank_amount;
+    bank_priceShow.innerHTML = `<img src="Images/Potato.png" class="smallPotato"> ${formatNumber(bank_price)}`;
     menuClick.play();
   }
 }
@@ -183,7 +294,7 @@ function Hoe_Pressed() {
     document.getElementById("moneyDisplay").textContent = formatNumber(Money);
   }
 
-  if (hoe_amount == 10 && hoe_multiplyer == 1) {
+  if (hoe_amount == 5 && hoe_multiplyer == 1) {
     HoeX2.style.display = "flex";
   }
 }
@@ -200,6 +311,9 @@ function Farmer_Pressed() {
     document.getElementById("moneyDisplay").textContent = formatNumber(Money);
   }
 
+  if (farmer_amount == 5 && farmer_multiplyer == 1) {
+    farmerX2.style.display = "flex";
+  }
 }
 
 function Farm_Pressed() {
@@ -217,6 +331,14 @@ function Farm_Pressed() {
   if (farm_amount == 1) {
     ExtraHand.style.display = "flex";
   }
+
+  if (farm_amount == 1) {
+    FarmerPPC.style.display = "flex";
+  }
+
+  if (farm_amount == 5 && farm_multiplyer == 1) {
+    farmX2.style.display = "flex";
+  }
 }
 
 function Fries_Pressed() {
@@ -231,8 +353,8 @@ function Fries_Pressed() {
     document.getElementById("moneyDisplay").textContent = formatNumber(Money);
   }
 
-  if (fries_amount == 1) {
-    FarmerPPC.style.display = "flex";
+  if (fries_amount == 5 && fries_multiplyer == 1) {
+    friesX2.style.display = "flex";
   }
 }
 
@@ -247,9 +369,28 @@ function Factory_Pressed() {
     purchase_audio.play();
     document.getElementById("moneyDisplay").textContent = formatNumber(Money);
   }
+
+  if (factory_amount == 5 && factory_multiplyer == 1) {
+    factoryX2.style.display = "flex";
+  }
 }
 
+function Bank_Pressed() {
+  if (Money >= bank_price) {
+    Money -= bank_price;
+    bank_amount += 1;
+    bank_price = Math.floor(bank_price * price_increase);
 
+    bankAmountShow.textContent = bank_amount;
+    bank_priceShow.innerHTML = `<img src="Images/Potato.png" class="smallPotato"> ${formatNumber(bank_price)}`;
+    purchase_audio.play();
+    document.getElementById("moneyDisplay").textContent = formatNumber(Money);
+  }
+
+  if (bank_amount == 5 && bank_multiplyer == 1) {
+    bankX2.style.display = "flex";
+  }
+}
 
 
 
@@ -270,7 +411,7 @@ function Forever() {
 
   PPC = click_multiplyer;
 
-  PPS = (hoe_amount * hoe_pps) * hoe_multiplyer + (farmer_amount * farmer_pps) + (farm_amount * farm_pps) + (fries_amount * fries_pps) + (factory_amount * factory_pps);
+  PPS = (hoe_amount * hoe_pps * hoe_multiplyer) + (farmer_amount * farmer_pps * farmer_multiplyer) + (farm_amount * farm_pps * farm_multiplyer) + (fries_amount * fries_pps * fries_multiplyer) + (factory_amount * factory_pps * factory_multiplyer) + (bank_amount * bank_pps * bank_multiplyer);
   Money += (PPS / 10);
   document.getElementById("PPSDisplay").textContent = "Per second: " + formatInfoNum(PPS);
   document.getElementById("moneyDisplay").textContent = formatNumber(Money);
@@ -310,6 +451,13 @@ function Forever() {
   }
   else {
     factory_priceShow.style.color = "red"
+  }
+
+  if (Money >= bank_price) {
+    bank_priceShow.style.color = "rgb(0, 255, 0)"
+  }
+  else {
+    bank_priceShow.style.color = "red"
   }
 }
 
