@@ -5,9 +5,25 @@ body, html {
   background-attachment: fixed;
   height: 100vh;
   margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   user-select: none;
 }
+
+.PotatoClicker_Backgrounds { 
+  background-image: 
+    url("Images/PotatoClicker_Background%203.png"), 
+    url("Images/PotatoClicker_Background%202.png");
+  background-position: right, left;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  user-select: none;
+}
+
+
+
 
 
 
@@ -60,13 +76,11 @@ header .left, header .center, header .right {
   user-select: none;
   border-radius: 50%;
   position: fixed;
-  top: 15vw;
-  left: 10vw;
+  top: 300px;
+  left: 152px;
   outline: none;
-  width: 13vw;
+  width: 230px;
   height: auto;
-  max-width: 300px;
-  min-width: 100px;
   z-index: 5;
 }
 
@@ -79,10 +93,7 @@ header .left, header .center, header .right {
   image-rendering: pixelated;
   -webkit-user-drag: none;
   transition: transform 0.3s ease;
-  width: 13vw;
-  height: auto;
-  max-width: 300px;
-  min-width: 100px;
+  width: 100%;
   z-index: 4;
 }
 
@@ -103,8 +114,8 @@ header .left, header .center, header .right {
 .moneyDisplay {
   font-family: cursive;
   position: fixed;
-  top: 5vw;
-  left: 16.3vw;
+  top: 120px;
+  left: 275px;
   transform: translateX(-50%);
   color: white;
   font-size: 40px;
@@ -116,8 +127,8 @@ header .left, header .center, header .right {
 .PPSDisplay {
   font-family: cursive;
   position: fixed;
-  top: 9.5vw;
-  left: 16.3vw;
+  top: 200px;
+  left: 275px;
   transform: translateX(-50%);
   color: white;
   font-size: 20px;
@@ -128,12 +139,22 @@ header .left, header .center, header .right {
 
 .upgradeText {
   position: fixed;
-  top: 20%;
-  right: 5%;
+  top: 140px;
+  right: 100px;
   font-family: cursive;
   color: white;
   font-weight: bold;
-  font-size: 100%;
+  font-size: 22px;
+}
+
+.OneTimeUpgradeText {
+  position: fixed;
+  top: 140px;
+  right: 325px;
+  font-family: cursive;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .layout {
@@ -192,11 +213,11 @@ header .left, header .center, header .right {
 
 .glow1 {
   image-rendering: crisp-edges;
-  width: 20vw;
+  width: 380px;
   animation: spin1 16s linear infinite;
   position: fixed;
-  top: 11vw;
-  left: 6.5vw;
+  top: 230px;
+  left: 80px;
   z-index: 1;
   user-select: none;
   pointer-events: none;
@@ -209,11 +230,11 @@ header .left, header .center, header .right {
 
 .glow2 {
   image-rendering: crisp-edges;
-  width: 20vw;
+  width: 380px;
   animation: spin2 16s linear infinite;
   position: fixed;
-  top: 11vw;
-  left: 6.5vw;
+  top: 230px;
+  left: 80px;
   z-index: 1;
   user-select: none;
   pointer-events: none;
@@ -234,7 +255,7 @@ header .left, header .center, header .right {
   right: 0;
   top: 0;
   bottom: 0;
-  width: 15.6%;
+  width: 300px;
   flex-direction: column;
 }
 
@@ -247,7 +268,7 @@ header .left, header .center, header .right {
   position: relative;
   width: 100%;
   height: 80px;
-  top: 30%;
+  top: 220px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -325,10 +346,10 @@ header .left, header .center, header .right {
 .OneTimeUpgrade_container {
   background-color: none;
   position: fixed;
-  right: 16.32%;
+  right: 313px;
   top: 0;
   bottom: 0;
-  width: 16.99%;
+  width: 208px;
   flex-direction: column;
 }
 
@@ -351,9 +372,9 @@ header .left, header .center, header .right {
     inset 2px 2px 10px rgba(255,255,255,0.2),
     0 2px 5px rgba(0,0,0,0.5);
   position: relative;
-  width: 70%;
+  width: 208px;
   height: 50px;
-  top: 10%;
+  top: 220px;
   display: none;
   align-items: center;
   justify-content: space-between;
@@ -408,10 +429,10 @@ header .left, header .center, header .right {
 
 .PatchNotesButton {
   position: fixed;
-  left: 33.72%;
-  top: 15%;
+  left: 548px;
+  top: 90px;
   z-index: 10;
-  width: 150px;
+  width: 120px;
   background-color: rgb(164, 164, 164);
   color: black;
   font-family: cursive;
@@ -434,18 +455,18 @@ header .left, header .center, header .right {
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 32.25%;
-  left: 33.72%;
+  right: 534px;
+  left: 548px;
   z-index: 1;
   display: none;
 }
 
 .PatchNotesText {
   position: fixed;
-  top: 20%;
+  top: 120px;
   bottom: 5%;
-  left: 33.72%;
-  right: 34.03%;
+  right: 534px;
+  left: 548px;
   overflow-y: auto;
   padding: 10px;
   font-family: cursive;
@@ -462,8 +483,8 @@ header .left, header .center, header .right {
 
 .settingsButton {
   position: fixed;
-  left: 33.72%;
-  top: 10%;
+  left: 548px;
+  top: 60px;
   z-index: 10;
   width: 80px;
   background-color: rgb(164, 164, 164);
@@ -493,20 +514,22 @@ header .left, header .center, header .right {
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 32.25%;
-  left: 33.72%;
+  right: 534px;
+  left: 548px;
   z-index: 1;
   display: none;
 }
 
 .musicSwitch {
   position: fixed;
-  top: 20%;
-  left: 35%;
+  top: 200px;
+  left: 560px;
   width: 35px;
-  height: 35px;
+  height: 20px;
+  height: auto;
   font-family: cursive;
-  font-weight: bold;
+  font-size: 10px;
+  text-align: center;
   border: solid rgb(255, 255, 255) 2px;
   background-color: #b6b6b6;
   user-select: none;
@@ -518,10 +541,10 @@ header .left, header .center, header .right {
 
 .musicText {
   position: fixed;
-  top: 19%;
-  left: 38%;
+  top: 182px;
+  left: 610px;
   width: 35px;
-  height: 35px;
+  height: 20px;
   font-family: cursive;
   color: white;
   pointer-events: none;
@@ -530,12 +553,14 @@ header .left, header .center, header .right {
 
 .SFXSwitch {
   position: fixed;
-  top: 28%;
-  left: 35%;
+  top: 230px;
+  left: 560px;
   width: 35px;
-  height: 35px;
+  height: 20px;
+  height: auto;
   font-family: cursive;
-  font-weight: bold;
+  font-size: 10px;
+  text-align: center;
   border: solid rgb(255, 255, 255) 2px;
   background-color: #b6b6b6;
   user-select: none;
@@ -547,10 +572,10 @@ header .left, header .center, header .right {
 
 .SFXText {
   position: fixed;
-  top: 27%;
-  left: 38%;
+  top: 212px;
+  left: 610px;
   width: 35px;
-  height: 35px;
+  height: 20px;
   font-family: cursive;
   color: white;
   pointer-events: none;
