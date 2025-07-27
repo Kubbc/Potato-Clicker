@@ -23,10 +23,6 @@ body, html {
 }
 
 
-
-
-
-
 header {
   border-radius: 5px;
   border-bottom: 3px solid black;
@@ -138,8 +134,8 @@ header .left, header .center, header .right {
 }
 
 .upgradeText {
-  position: fixed;
-  top: 140px;
+  position: absolute;
+  top: 100px;
   right: 100px;
   font-family: cursive;
   color: white;
@@ -148,8 +144,8 @@ header .left, header .center, header .right {
 }
 
 .OneTimeUpgradeText {
-  position: fixed;
-  top: 140px;
+  position: absolute;
+  top: 100px;
   right: 325px;
   font-family: cursive;
   color: white;
@@ -256,8 +252,28 @@ header .left, header .center, header .right {
   top: 0;
   bottom: 0;
   width: 300px;
+  overflow-y: auto;
   flex-direction: column;
 }
+
+.upgradeContainer .upgrade:last-child {
+  margin-bottom: 250px;
+}
+
+.upgradeContainer::-webkit-scrollbar {
+  background-color: black;
+  width: 8px;
+}
+
+.upgradeContainer::-webkit-scrollbar-thumb {
+  background-color: #c3c3c3;
+  border-radius: 4px;
+}
+
+.upgradeContainer::-webkit-scrollbar-thumb:hover {
+  background-color: #868686;
+}
+
 
 .upgrade {
   background-color: #888;
@@ -268,7 +284,7 @@ header .left, header .center, header .right {
   position: relative;
   width: 100%;
   height: 80px;
-  top: 220px;
+  top: 180px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -300,7 +316,7 @@ header .left, header .center, header .right {
 }
 
 .upgrade_price {
-  position: fixed;
+  position: absolute;
   color: white;
   font-weight: bold;
   padding-top: 25px;
@@ -354,7 +370,7 @@ header .left, header .center, header .right {
 }
 
 .OneTimeUpgrade_text {
-  position: fixed;
+  position: absolute;
   color: white;
   pointer-events: none;
   font-family: cursive;
@@ -374,7 +390,7 @@ header .left, header .center, header .right {
   position: relative;
   width: 208px;
   height: 50px;
-  top: 220px;
+  top: 180px;
   display: none;
   align-items: center;
   justify-content: space-between;
@@ -397,7 +413,7 @@ header .left, header .center, header .right {
 }
 
 .OneTimeUpgrade_price {
-  position: fixed;
+  position: absolute;
   color: white;
   font-weight: bold;
   padding-top: 17px;
@@ -459,14 +475,15 @@ header .left, header .center, header .right {
   left: 548px;
   z-index: 1;
   display: none;
+
 }
 
 .PatchNotesText {
-  position: fixed;
-  top: 120px;
+  position: absolute;
+  top: 100px;
   bottom: 5%;
-  right: 534px;
-  left: 548px;
+  left: 0;
+  width: 97%;
   overflow-y: auto;
   padding: 10px;
   font-family: cursive;
@@ -486,7 +503,7 @@ header .left, header .center, header .right {
   left: 548px;
   top: 60px;
   z-index: 10;
-  width: 80px;
+  width: 120px;
   background-color: rgb(164, 164, 164);
   color: black;
   font-family: cursive;
@@ -516,15 +533,14 @@ header .left, header .center, header .right {
   bottom: 0;
   right: 534px;
   left: 548px;
-  z-index: 1;
   display: none;
 }
 
 .musicSwitch {
-  position: fixed;
-  top: 200px;
-  left: 560px;
-  width: 35px;
+  position: absolute;
+  top: 195px;
+  left: 10px;
+  width: 50px;
   height: 20px;
   height: auto;
   font-family: cursive;
@@ -533,6 +549,9 @@ header .left, header .center, header .right {
   border: solid rgb(255, 255, 255) 2px;
   background-color: #b6b6b6;
   user-select: none;
+  
+  z-index: 101;
+
 }
 
 .musicSwitch:hover {
@@ -540,22 +559,25 @@ header .left, header .center, header .right {
 }
 
 .musicText {
-  position: fixed;
-  top: 182px;
-  left: 610px;
+  position: absolute;
+  top: 200px;
+  left: 13px;
   width: 35px;
   height: 20px;
   font-family: cursive;
   color: white;
   pointer-events: none;
   user-select: none;
+
+  z-index: 101;
+
 }
 
 .SFXSwitch {
-  position: fixed;
-  top: 230px;
-  left: 560px;
-  width: 35px;
+  position: absolute;
+  top: 195px;
+  left: 70px;
+  width: 50px;
   height: 20px;
   height: auto;
   font-family: cursive;
@@ -564,6 +586,9 @@ header .left, header .center, header .right {
   border: solid rgb(255, 255, 255) 2px;
   background-color: #b6b6b6;
   user-select: none;
+
+  z-index: 101;
+
 }
 
 .SFXSwitch:hover {
@@ -571,13 +596,336 @@ header .left, header .center, header .right {
 }
 
 .SFXText {
-  position: fixed;
-  top: 212px;
-  left: 610px;
+  position: absolute;
+  top: 200px;
+  left: 78px;
   width: 35px;
   height: 20px;
   font-family: cursive;
   color: white;
   pointer-events: none;
   user-select: none;
+
+  z-index: 101;
+
+}
+
+
+.save {
+  position: absolute;
+  top: 300px;
+  left: 10px;
+  width: 80px;
+  height: 20px;
+  height: auto;
+  font-family: cursive;
+  font-size: 10px;
+  text-align: center;
+  border: solid rgb(255, 255, 255) 2px;
+  background-color: #b6b6b6;
+  user-select: none;
+
+  z-index: 101;
+}
+
+.save:hover {
+  background-color: #cfcfcf;
+}
+
+.wipeSave {
+  position: absolute;
+  top: 330px;
+  left: 100px;
+  width: 80px;
+  height: 20px;
+  height: auto;
+  font-family: cursive;
+  font-size: 10px;
+  text-align: center;
+  color: black;
+  border: solid red 2px;
+  background-color: #7a7a7a;
+  user-select: none;
+
+  z-index: 101;
+}
+
+.wipeSave:hover {
+  background-color: #cfcfcf;
+}
+
+
+.wipeSaveContainer {
+  background-color: #2c2c2c;
+  position: fixed;
+  display: none;
+  width: 200px;
+  height: 200px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  border-style: solid;
+  border-color: rgb(255, 143, 143);
+  border-radius: 5px;
+  z-index: 10000;
+}
+
+.wipeSaveText {
+  color: rgb(255, 41, 41);
+  position: absolute;
+  display: flex;
+  font-family: cursive;
+  top: 10px;
+  left: 20px;
+  width: 90%;
+
+}
+
+.wipeSaveText2 {
+  color: rgb(255, 41, 41);
+  position: absolute;
+  font-family: cursive;
+  top: 80px;
+  left: 17px;
+  width: 100%;
+}
+
+.wipeSaveYes {
+  background-color: #707070;
+  border-color: rgb(255, 143, 143);;
+  color: rgb(255, 255, 255);
+  font-family: cursive;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+
+  cursor: pointer;
+}
+
+.wipeSaveNo {
+  background-color: #707070;
+  border-color: rgb(255, 143, 143);;
+  color: rgb(255, 255, 255);
+  font-family: cursive;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+
+  cursor: pointer;
+}
+
+.wipeSaveYes:hover, .wipeSaveNo:hover {
+  background-color: #474747;
+}
+
+
+.exportSave {
+  position: absolute;
+  top: 330px;
+  left: 10px;
+  width: 80px;
+  height: 20px;
+  height: auto;
+  font-family: cursive;
+  font-size: 10px;
+  text-align: center;
+  border: solid rgb(255, 255, 255) 2px;
+  background-color: #b6b6b6;
+  user-select: none;
+
+  z-index: 101;
+}
+
+.exportSave:hover {
+  background-color: #cfcfcf;
+}
+
+.load {
+  position: absolute;
+  top: 300px;
+  left: 100px;
+  width: 80px;
+  height: 20px;
+  height: auto;
+  font-family: cursive;
+  font-size: 10px;
+  text-align: center;
+  border: solid rgb(255, 255, 255) 2px;
+  background-color: #b6b6b6;
+  user-select: none;
+
+  z-index: 101;
+}
+
+.load:hover {
+  background-color: #cfcfcf;
+}
+
+
+.loadExportContainer {
+  background-color: #2c2c2c;
+  position: fixed;
+  display: none;
+  width: 200px;
+  height: 200px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  z-index: 10000;
+}
+
+.closeMenu {
+  filter: brightness(0.9);
+  height: 12px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+
+  cursor: pointer;
+}
+.closeMenu:hover {
+  filter: brightness(0.8);
+}
+
+.loadText {
+  color: white;
+  position: absolute;
+  display: flex;
+  font-family: cursive;
+  top: 5px;
+  left: 7px;
+  width: 100%;
+}
+
+.loadInput {
+  background-color: #4a4a4a;
+  color: white;
+  font-family: cursive;
+  position: fixed;
+  display: flex;
+  width: 195px;
+  height: 150px;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+  outline: none;
+  border: none;
+  resize: none;
+  
+
+  z-index: 10001;
+}
+
+.exportText {
+  color: white;
+  position: absolute;
+  display: flex;
+  font-family: cursive;
+  top: 5px;
+  left: 60px;
+  width: 100%;
+}
+
+.exportCode {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 5px;
+  box-sizing: border-box;
+  
+  background: #222;
+  color: white;
+  font-family: cursive;
+  font-size: 12px;
+  
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+  white-space: pre-wrap;
+  word-wrap: break-word;
+
+  user-select: text;
+}
+
+.exportCode::-webkit-scrollbar {
+  width: 8px;
+}
+
+.exportCode::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.exportCode::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
+.exportCode::-webkit-scrollbar {
+  width: 8px;
+}
+
+.loadInput::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.loadInput::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.notificationContainer {
+  background-color: transparent;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+
+  transform: translate(-50%, 0);
+  z-index: 100;
+}
+
+.notification {
+  background-color: rgb(33, 33, 33);
+  position: absolute;
+  display: none;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+
+  border-style: solid;
+  border-radius: 5px;
+  border-color: rgb(143, 255, 147);
+
+  z-index: 100;
+}
+
+.notificationTitle {
+  color: white;
+  font-family: cursive;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0;
+
+  transform: translate(-50%, 0);
+}
+
+.notificationText {
+  color: rgb(173, 173, 173);
+  font-family: cursive;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  margin: 0;
+  margin-left: 10px;
+
 }
