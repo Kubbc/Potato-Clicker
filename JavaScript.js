@@ -60,6 +60,8 @@ setInterval(Save, 60000)
 
 const price_increase = 1.15;
 
+let isTabHidden = false;
+
 let patchNotesOnOff = false;
 let settingsOnOff = false;
 let musicOnOff = true;
@@ -613,12 +615,16 @@ function Cosmic_Pressed() {
 
 function Forever() {
 
+  if (isTabHidden) return;
+
   if (window.innerWidth < 1200 && window.location.href.includes("index.html")) {
   window.location.href = "TooSmallScreen.html";
   }
   else if (window.innerWidth >= 1200 && window.location.href.includes("TooSmallScreen.html")) {
   window.location.href = "index.html";
   }
+
+  Money += (PPS / 10);
 
 
 
@@ -1234,37 +1240,42 @@ function updateUI() {
 }
 
 
-
 let hiddenTime = 0;
 let shownTime = 0;
 let secondsAway = 0;
+let offlinePPS = 0;
 
 document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "hidden") {
-    PPS = 0;
+    isTabHidden = true;
     hiddenTime = Date.now();
+    offlinePPS = PPS;     // snapshot
   } else if (document.visibilityState === "visible") {
-    shownTime = Date.now()
+    isTabHidden = false;
+    shownTime = Date.now();
     secondsAway = (shownTime - hiddenTime) / 1000;
-    
+    Money += offlinePPS * secondsAway;
+
+
+    Money += offlinePPS * secondsAway;
+
     if (farmerPPC_purchased == true) {
       farmerPPC_multiplyer = (0.1 * farmer_amount);
     }
 
     if (fingerFries_purchased == true) {
-      fingerFries_multiplyer = 20 * fries_amount
+      fingerFries_multiplyer = 20 * fries_amount;
     }
 
     if (exFingers_purchased == true) {
-      exFingers_multiplyer = 200 * bank_amount
+      exFingers_multiplyer = 200 * bank_amount;
     }
-    
+
     if (ExtraHand_purchased == true) {
       hoeClick_multiplyer *= 2;
     }
 
-  }
-    hoeClick_multiplyer = hoe_amount * 0.1 * hoe_multiplyer
+    hoeClick_multiplyer = hoe_amount * 0.1 * hoe_multiplyer;
     click_multiplyer = 1 + farmerPPC_multiplyer + fingerFries_multiplyer + exFingers_multiplyer;
 
     if (hoeX2_purchased == true) {
@@ -1273,9 +1284,18 @@ document.addEventListener("visibilitychange", () => {
 
     PPC = click_multiplyer;
 
-    PPS = (hoe_amount * hoe_pps * hoe_multiplyer) + (farmer_amount * farmer_pps * farmer_multiplyer) + (farm_amount * farm_pps * farm_multiplyer) + (fries_amount * fries_pps * fries_multiplyer) + (factory_amount * factory_pps * factory_multiplyer) + (bank_amount * bank_pps * bank_multiplyer) + (potatoMind_amount * potatoMind_pps * potatoMind_multiplyer) + (tool_amount * tool_pps * tool_multiplyer) + (planet_amount * planet_pps * planet_multiplyer) + (cosmic_amount * cosmic_pps * cosmic_multiplyer);
-    Money += (PPS * secondsAway);
+    PPS = (hoe_amount * hoe_pps * hoe_multiplyer) 
+        + (farmer_amount * farmer_pps * farmer_multiplyer) 
+        + (farm_amount * farm_pps * farm_multiplyer) 
+        + (fries_amount * fries_pps * fries_multiplyer) 
+        + (factory_amount * factory_pps * factory_multiplyer) 
+        + (bank_amount * bank_pps * bank_multiplyer) 
+        + (potatoMind_amount * potatoMind_pps * potatoMind_multiplyer) 
+        + (tool_amount * tool_pps * tool_multiplyer) 
+        + (planet_amount * planet_pps * planet_multiplyer) 
+        + (cosmic_amount * cosmic_pps * cosmic_multiplyer);
+
     document.getElementById("PPSDisplay").textContent = "Per second: " + formatInfoNum(PPS);
     document.getElementById("moneyDisplay").textContent = formatNumber(Money);
-  
+  }
 });
