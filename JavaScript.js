@@ -734,6 +734,195 @@ function Forever() {
 
 }
 
+InfoUpgradeBox = document.getElementById("InfoUpgradeBox");
+InfoUpgradeBoxTitle = document.getElementById("InfoUpgradeBoxTitle");
+InfoUpgradeBoxQuote = document.getElementById("InfoUpgradeBoxQuote");
+InfoUpgradeBoxInfo = document.getElementById("InfoUpgradeBoxInfo");
+
+hoe.addEventListener("mouseenter", function () {
+  InfoUpgradeBox.style.display = "flex";
+
+  InfoUpgradeBoxTitle.innerHTML = `
+  <img src="Images/Upgrades/upgrade_hoe.png" alt="hoe" style="width:24px;height:24px;vertical-align:middle;margin-right:5px;">
+  Hoe
+  `;
+  InfoUpgradeBoxQuote.textContent = '"A hoe. I know what were thinking..."'
+  InfoUpgradeBoxInfo.textContent = "Gives " + hoe_pps + " potatoes per second"
+  InfoUpgradeBoxInfo.style.top = "50px"
+});
+hoe.addEventListener("mouseleave", function () {
+  InfoUpgradeBox.style.display = "none";
+});
+document.addEventListener("mousemove", function(event) {
+  InfoUpgradeBox.style.top = (event.clientY + -40) + "px"; 
+});
+
+farmer.addEventListener("mouseenter", function () {
+  InfoUpgradeBox.style.display = "flex";
+
+  InfoUpgradeBoxTitle.innerHTML = `
+  <img src="Images/Upgrades/upgrade_farmer.png" alt="farmer" style="width:24px;height:24px;vertical-align:middle;margin-right:5px;">
+  Farmer
+  `;
+  InfoUpgradeBoxQuote.textContent = '"A hard working (low payed) farmer to help you!"'
+  InfoUpgradeBoxInfo.textContent = "Gives " + farmer_pps + " potatoes per second"
+  InfoUpgradeBoxInfo.style.top = "50px"
+});
+farmer.addEventListener("mouseleave", function () {
+  InfoUpgradeBox.style.display = "none";
+});
+document.addEventListener("mousemove", function(event) {
+  InfoUpgradeBox.style.top = (event.clientY + -40) + "px"; 
+});
+
+farm.addEventListener("mouseenter", function () {
+  InfoUpgradeBox.style.display = "flex";
+
+  InfoUpgradeBoxTitle.innerHTML = `
+  <img src="Images/Upgrades/upgrade_farm.png" alt="farm" style="width:24px;height:24px;vertical-align:middle;margin-right:5px;">
+  Farm
+  `;
+  InfoUpgradeBoxQuote.textContent = '"You knew that old garden wouldent cut it"'
+  InfoUpgradeBoxInfo.textContent = "Gives " + farm_pps + " potatoes per second"
+  InfoUpgradeBoxInfo.style.top = "50px"
+});
+farm.addEventListener("mouseleave", function () {
+  InfoUpgradeBox.style.display = "none";
+});
+document.addEventListener("mousemove", function(event) {
+  InfoUpgradeBox.style.top = (event.clientY + -40) + "px"; 
+});
+
+fries.addEventListener("mouseenter", function () {
+  InfoUpgradeBox.style.display = "flex";
+
+  InfoUpgradeBoxTitle.innerHTML = `
+  <img src="Images/Upgrades/upgrade_fries.png" alt="fries" style="width:24px;height:24px;vertical-align:middle;margin-right:5px;">
+  Fries
+  `;
+  InfoUpgradeBoxQuote.textContent = '"Potatoes are gross i want fries"'
+  InfoUpgradeBoxInfo.textContent = "Gives " + fries_pps + " potatoes per second"
+  InfoUpgradeBoxInfo.style.top = "50px"
+});
+fries.addEventListener("mouseleave", function () {
+  InfoUpgradeBox.style.display = "none";
+});
+document.addEventListener("mousemove", function(event) {
+  InfoUpgradeBox.style.top = (event.clientY + -40) + "px"; 
+});
+
+factory.addEventListener("mouseenter", function () {
+  InfoUpgradeBox.style.display = "flex";
+
+  InfoUpgradeBoxTitle.innerHTML = `
+  <img src="Images/Upgrades/upgrade_factory.png" alt="factory" style="width:24px;height:24px;vertical-align:middle;margin-right:5px;">
+  Factory
+  `;
+  InfoUpgradeBoxQuote.textContent = '"You know what F**k farms. CO2 BABYYY"'
+  InfoUpgradeBoxInfo.textContent = "Gives " + factory_pps + " potatoes per second"
+  InfoUpgradeBoxInfo.style.top = "50px"
+});
+factory.addEventListener("mouseleave", function () {
+  InfoUpgradeBox.style.display = "none";
+});
+document.addEventListener("mousemove", function(event) {
+  InfoUpgradeBox.style.top = (event.clientY + -40) + "px"; 
+});
+
+bank.addEventListener("mouseenter", function () {
+  InfoUpgradeBox.style.display = "flex";
+
+  InfoUpgradeBoxTitle.innerHTML = `
+  <img src="Images/Upgrades/upgrade_bank.png" alt="bank" style="width:24px;height:24px;vertical-align:middle;margin-right:5px;">
+  Bank
+  `;
+  InfoUpgradeBoxQuote.textContent = '"You have collected so many potatos that people is in a loss of potatoes making them want to trade potatoes instead. No. THEY NEED TO TRADE POTATOES"'
+  InfoUpgradeBoxInfo.textContent = "Gives " + bank_pps + " potatoes per second"
+  InfoUpgradeBoxInfo.style.top = "90px"
+});
+bank.addEventListener("mouseleave", function () {
+  InfoUpgradeBox.style.display = "none";
+});
+document.addEventListener("mousemove", function(event) {
+  InfoUpgradeBox.style.top = (event.clientY + -40) + "px"; 
+});
+
+potatoMind.addEventListener("mouseenter", function () {
+  InfoUpgradeBox.style.display = "flex";
+
+  InfoUpgradeBoxTitle.innerHTML = `
+  <img src="Images/Upgrades/upgrade_PotatoMind.png" alt="potatoMind" style="width:24px;height:24px;vertical-align:middle;margin-right:5px;">
+  Potato Mind
+  `;
+  InfoUpgradeBoxQuote.textContent = '"While digging in a farm near a radioactive factory you find a potato. With a brain?"'
+  InfoUpgradeBoxInfo.textContent = "Gives " + potatoMind_pps + " potatoes per second"
+  InfoUpgradeBoxInfo.style.top = "65px"
+});
+potatoMind.addEventListener("mouseleave", function () {
+  InfoUpgradeBox.style.display = "none";
+});
+document.addEventListener("mousemove", function(event) {
+  InfoUpgradeBox.style.top = (event.clientY + -40) + "px"; 
+});
+
+tool.addEventListener("mouseenter", function () {
+  InfoUpgradeBox.style.display = "flex";
+
+  InfoUpgradeBoxTitle.innerHTML = `
+  <img src="Images/Upgrades/upgrade_Tool.png" alt="tool" style="width:24px;height:24px;vertical-align:middle;margin-right:5px;">
+  Reality Tool
+  `;
+  InfoUpgradeBoxQuote.textContent = '"One of the engineers at your factory found a way of tweaking reality to grow MORE POTATOES"'
+  InfoUpgradeBoxInfo.textContent = "Gives " + tool_pps + " potatoes per second"
+  InfoUpgradeBoxInfo.style.top = "75px"
+});
+tool.addEventListener("mouseleave", function () {
+  InfoUpgradeBox.style.display = "none";
+});
+document.addEventListener("mousemove", function(event) {
+  InfoUpgradeBox.style.top = (event.clientY + -40) + "px"; 
+});
+
+planet.addEventListener("mouseenter", function () {
+  InfoUpgradeBox.style.display = "flex";
+
+  InfoUpgradeBoxTitle.innerHTML = `
+  <img src="Images/Upgrades/upgrade_planet.png" alt="planet" style="width:24px;height:24px;vertical-align:middle;margin-right:5px;">
+  Planet
+  `;
+  InfoUpgradeBoxQuote.textContent = '"You overtake planets and destroy their eco system to make room for MORE POTATOES"'
+  InfoUpgradeBoxInfo.textContent = "Gives " + planet_pps + " potatoes per second"
+  InfoUpgradeBoxInfo.style.top = "65px"
+});
+planet.addEventListener("mouseleave", function () {
+  InfoUpgradeBox.style.display = "none";
+});
+document.addEventListener("mousemove", function(event) {
+  InfoUpgradeBox.style.top = (event.clientY + -40) + "px"; 
+});
+
+cosmic.addEventListener("mouseenter", function () {
+  InfoUpgradeBox.style.display = "flex";
+
+  InfoUpgradeBoxTitle.innerHTML = `
+  <img src="Images/Upgrades/upgrade_cosmic.png" alt="cosmic" style="width:24px;height:24px;vertical-align:middle;margin-right:5px;">
+  Cosmic
+  `;
+  InfoUpgradeBoxQuote.textContent = '"While trying to find planets you come across a strange energy looking thing. You send a astronout out to explore it. He died. You are now feeding it a bunch of potatoes until in explodes in to MORE POTATOES"'
+  InfoUpgradeBoxInfo.textContent = "Gives " + cosmic_pps + " potatoes per second"
+  InfoUpgradeBoxInfo.style.top = "100px"
+});
+cosmic.addEventListener("mouseleave", function () {
+  InfoUpgradeBox.style.display = "none";
+});
+document.addEventListener("mousemove", function(event) {
+  InfoUpgradeBox.style.top = (event.clientY + -40) + "px"; 
+});
+
+
+
+
+
 
 setInterval(Forever, 100);
 
